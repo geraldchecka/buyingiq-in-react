@@ -1,0 +1,22 @@
+# EditorConfig is awesome: http://EditorConfig.org
+
+# top-most EditorConfig file
+root = true 
+
+[*]
+end_of_line = lf
+insert_final_newline = true
+indent_style = space
+indent_size = 2
+charset = utf-8
+trim_trailing_whitespace = true
+max_line_length = 120
+
+[*.{js,jsx}]
+quote_type = single
+spaces_around_operators = true
+spaces_around_brackets = inside
+
+# HTML
+[*.html]
+quote_type = double

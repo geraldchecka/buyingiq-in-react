@@ -1,0 +1,38 @@
+#parent {
+  margin: 0 auto;
+  width: 1000px;
+  border: 1px solid #e0e0e0;
+}
+.main {
+  display: inline-block;
+  width: 100%;
+}
+.filters-section {
+  float: left;
+  width: 20%;
+  padding-left: 15px;
+}
+.composite-results {
+  width: 77%;
+  float: left;
+  padding-left: 15px;
+}
+.top-area {
+  width: 100%;
+  min-height: 30px;
+}
+.top-area .facet-section {
+  width: 72%;
+  float: left;
+}
+.top-area .search-section {
+  width: 28%;
+  float: right;
+}
+.sort-section {
+  min-height: 30px;
+  line-height: 1.5;
+}
+.results-section {
+  
+}
