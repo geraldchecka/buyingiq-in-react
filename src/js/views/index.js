@@ -7,7 +7,7 @@ import SearchPage from './containers/search';
 import SortPage from './containers/sort';
 
 /* Dumb Components */
-//import  from './dumb-components/';
+//import  from './components/';
 
 const views = {
   FacetPage: FacetPage,
