@@ -28,9 +28,9 @@ function getCall(payload, callback) {
   $.ajax({
     url: apiEndPoints.search,
     type: "GET",
-    data: data,
+    data: {},
     success: function (response) {
-      console.log(res);
+      console.log(response);
       //send it to storeDispatcher as success
       callback({
         status: "success",
