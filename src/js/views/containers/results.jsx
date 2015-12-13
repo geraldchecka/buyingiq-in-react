@@ -15,6 +15,10 @@ var ResultsSection = React.createClass({
     console.log(this.props.mobiles);
     return (
       <div className="results-section">
+        <div className="results-head">
+          
+          <div className="meta">Showing results x of y</div>
+        </div>
         {this.props.mobiles.map(function(item) {
           return (
             <div className="product" key={item.id}>

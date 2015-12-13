@@ -1,15 +1,13 @@
 import React from 'react';
 
+import FolderView from '../components/FolderView';
+
 const FiltersSection = React.createClass({
   render: function() {
     return (
-      <div className="filters-section">
-        <b> Narrow By </b>
-        <b> Narrow By </b>
-        <b> Narrow By </b>
-        <b> Narrow By </b>
-        <b> Narrow By </b>
-        <b> Narrow By </b>
+      <div id="search-result-filters" className="filter-tags filters-section">
+        <div className="filter-head">Narrow By</div>
+        <FolderView folders={this.props.folders} />
       </div>
     )
   }

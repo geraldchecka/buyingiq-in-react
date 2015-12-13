@@ -2,7 +2,7 @@ import ActionContainer from './ActionContainer';
 import { AppDispatcher, StoreDispatcher } from '../dispatchers/Dispatcher';
 
 //TODO: Where WebAPI should sit will be decided later
-import WebAPI from '../utils/network';
+import WebAPI from '../utils/WebAPI';
 
 var actions = {
   intialLoad: function(initParams) {

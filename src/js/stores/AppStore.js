@@ -1,27 +1,33 @@
 import React from 'react';
 import { Dispatcher } from 'flux';
-import { AppDispatcher, StoreDispatcher } from '../dispatchers/Dispatcher';
-import ActionContainer from '../actions/ActionContainer';
 import { EventEmitter } from 'events';
 import assign from 'object-assign';
+
+import { AppDispatcher, StoreDispatcher } from '../dispatchers/Dispatcher';
+import ActionContainer from '../actions/ActionContainer';
+import DataOperations from '../utils/DataOperations';
 
 console.log(EventEmitter);
 
 var CHANGE_EVENT = "change";
 
 var AppStore = assign({}, EventEmitter.prototype, {
-  items: {},
+  massagedData: {},
+  rawData: {},
   init: function(rawMessage) {
     //Add more left-sections like
-      //Brands,Buying-IQ score, Price range, handsetType, inbuilt features, camera pixels,keyboard type,screen size,processor speed
       //And more missing sections based on count/some other logic that is working currently
-    this.items = rawMessage;
+    this.rawData = rawMessage;
   },
   getAllData: function() {
-    return this.items || null;
+    return this.rawData || null;
   },
   getMobiles: function() {
-    return this.items.products || [];
+    return this.rawData.products || [];
+  },
+  getFolders: function() {
+    return DataOperations.getMobileFolders(this.rawData.folders);
+    //return this.rawData.folders || [];
   },
   emitChange: function() {
     this.emit(CHANGE_EVENT);

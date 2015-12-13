@@ -1,6 +1,6 @@
 #parent {
   margin: 0 auto;
-  width: 1000px;
+  width: 1200px;
   border: 1px solid #e0e0e0;
 }
 .main {
@@ -11,6 +11,23 @@
   float: left;
   width: 20%;
   padding-left: 15px;
+}
+.filters-section .facets {
+  max-height: 255px;
+  overflow: auto;
+  margin-bottom: 2px;
+}
+.filters-section .facet {
+  width: 100%;
+  display: inline-block;
+}
+.filters-section .folder {
+  margin: 0 0 16px 0;
+}
+.filters-section .folder .head {
+  background-color: #efefef;
+  font-weight: bold;
+  padding: 8px 0 8px 11px;
 }
 .composite-results {
   width: 77%;
@@ -29,10 +46,17 @@
   width: 28%;
   float: right;
 }
-.sort-section {
+.top-area .sort-section {
   min-height: 30px;
   line-height: 1.5;
 }
-.results-section {
-  
+.results-section .product {
+  position: relative;
+  float: left;
+  border: 1px solid #efefef;
+  border-top: 0;
+  border-left: none;
+  height: 455px;
+  padding: 0 12px;
+  width: 25%;
 }
