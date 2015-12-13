@@ -27,9 +27,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(cors());
 
+//  http://api.buyingiq.com/v1/search/?tags=mobiles&tags=samsung&facet=1&page=1
 app.get('/search', function(req, res) {
+  var qs = querystring.stringify(req.query);
   request({
-    uri: "http://api.buyingiq.com/v1/search/?tags=mobiles&tags=samsung&facet=1&page=1"
+    uri: "http://api.buyingiq.com/v1/search/?"+qs
   }).on('error', function(err) {
     console.log(err);
   }).pipe(res);

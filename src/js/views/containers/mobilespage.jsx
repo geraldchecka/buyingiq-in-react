@@ -4,13 +4,12 @@ import React from 'react';
 import ResultsSection from './results';
 import FiltersSection from './filters';
 import SearchSection from './search';
-import SortSection from './sort';
 import FacetSection from './facet';
 
 import AppActions from '../../actions/AppActionCreators';
 import AppStore from '../../stores/AppStore';
 
-
+//SearchSection is [OPTIONAL]
 function getStateFromStores() {
   return {
     mobiles: AppStore.getMobiles(),
@@ -25,14 +24,10 @@ const MobilesPage = React.createClass({
   getInitialState: function () {
     return getStateFromStores();
   },
-  /*getDefaultProps: function () {
-
-  },*/
   componentWillMount: function () {
     AppActions.intialLoad();
   },
   componentDidMount: function() {
-    //Handle Response callback
     AppStore.addChangeListener(this._changeEvent);
   },
   componentWillUnmount: function() {
@@ -45,9 +40,7 @@ const MobilesPage = React.createClass({
         <div className="composite-results">
           <div className="top-area">
             <FacetSection />
-            <SearchSection />
           </div>
-          <SortSection />
           <ResultsSection mobiles={this.state.mobiles} />
         </div>
       </div>

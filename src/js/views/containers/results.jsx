@@ -1,5 +1,5 @@
 import React from 'react';
-
+import SortSection from './sort';
 import ResultDetails from '../components/ResultDetails';
 import ImageView from '../components/ImageView';
 
@@ -8,7 +8,6 @@ var ResultsSection = React.createClass({
     //Mount some default Box Layouts for mobiles like as how facebook does(dummy sections)
   },
   componentDidMount: function() {
-    //debugger;
     //Make 
   },
   render: function() {
@@ -16,7 +15,7 @@ var ResultsSection = React.createClass({
     return (
       <div className="results-section">
         <div className="results-head">
-          
+          <SortSection />
           <div className="meta">Showing results x of y</div>
         </div>
         {this.props.mobiles.map(function(item) {

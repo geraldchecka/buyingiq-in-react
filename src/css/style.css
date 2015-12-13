@@ -46,9 +46,16 @@
   width: 28%;
   float: right;
 }
-.top-area .sort-section {
-  min-height: 30px;
-  line-height: 1.5;
+.results-head {
+  background-color: #efefef;
+  color: #2f2f2f;
+}
+.results-head .sort-section {
+  float: right;
+  margin: 7px 10px 0 0;
+}
+.results-head .meta {
+  padding: 8px 10px;
 }
 .results-section .product {
   position: relative;

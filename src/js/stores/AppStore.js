@@ -1,4 +1,3 @@
-import React from 'react';
 import { Dispatcher } from 'flux';
 import { EventEmitter } from 'events';
 import assign from 'object-assign';
@@ -40,12 +39,17 @@ var AppStore = assign({}, EventEmitter.prototype, {
   }
 });
 
+//Dispatcher Handles
 AppStore.dispatchToken = AppDispatcher.register(function(payload) {
   switch(payload.actionType) {
     case ActionContainer.INITIAL_LOAD_REQUEST:
       AppStore.init(payload.response.data);
       AppStore.emitChange();
       break;
+    case ActionContainer.FILTER_FACET_REQUEST:
+      AppStore.init(payload.response.data);
+      AppStore.emitChange();
+    break;
   }
 
   return true;

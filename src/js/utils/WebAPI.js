@@ -1,34 +1,17 @@
 import $ from 'jquery';
 
-/******************* REFACTOR AFTER COMPLETION ***************/
+$.ajaxSettings.traditional = true;
 
 const apiEndPoints = {
   search: 'http://localhost:5000/search'
 };
 
-//Write logic to mutate URL duplicate parameters
-
-/******* Generate a string
-  e.g., tags=mobiles&tag=samsung
-  - If I were to represent 'tags' in an object, it is not possible because of possible duplicate keys
-  - Better take input from 'actionDispatcher' payload as array of 'tags' values,
-    and construct a & (Ampersand) concenated string of 'tags'
-*/
-
-//TODO
-function validatePayload(response) {
-  return "A ready for consumption, concatenated and URL-params string";
-}
-
-/***** Ajax wrappers go here *****/
-
 //GET
 function getCall(payload, callback) {
-  let data = validatePayload(payload);
   $.ajax({
     url: apiEndPoints.search,
     type: "GET",
-    data: {},
+    data: payload,
     success: function (response) {
       console.log(response);
       //send it to storeDispatcher as success
