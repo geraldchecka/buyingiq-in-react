@@ -28,7 +28,6 @@ const SortSection = React.createClass({
     ];
   },
   handleClick: function(event) {
-    debugger;
     AppActions.setActionItems({ type: "tag", value: event.target.value});
     AppActions.filterRequest();
   },

@@ -9,7 +9,6 @@ import FacetSection from './facet';
 import AppActions from '../../actions/AppActionCreators';
 import AppStore from '../../stores/AppStore';
 
-//SearchSection is [OPTIONAL]
 function getStateFromStores() {
   return {
     mobiles: AppStore.getMobiles(),

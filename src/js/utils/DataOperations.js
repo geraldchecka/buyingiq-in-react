@@ -22,7 +22,6 @@ var DataOperations = {
       if (item.uri === self.folderItems[item.uri])
         return true;
     });
-    console.log(result);
     return result;
   },
   //Get Brand facets

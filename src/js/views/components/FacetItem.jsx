@@ -10,11 +10,9 @@ const FacetItem = React.createClass({
   },
   triggerClick: function(facet, event) {
     this.setState({isChecked: event.target.checked});
-    console.log(facet);
     AppActions.setActionItems({ type: "tag", value: facet.tag});
     AppActions.filterRequest();
-    debugger;
-    //AppActions.setFacetAction({facet: facet});
+    AppActions.facetSelection({facet: facet});
   },
   render: function() {
     var facet = this.props.facet;

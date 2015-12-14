@@ -13,7 +13,6 @@ var config = {
     publicPath: '/static/'
   },
   plugins: [
-    /*new webpack.optimize.OccurenceOrderPlugin(),*/
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': JSON.stringify('production')
@@ -32,7 +31,8 @@ var config = {
         loaders: ['babel'],
         exclude: /node_modules/
       },
-      { exclude: /node_modules/, loader: ExtractTextPlugin.extract("style-loader", "css-loader"), test: /\.css$/ }
+      { exclude: /node_modules/, loader: ExtractTextPlugin.extract("style-loader", "css-loader"), test: /\.css$/ },
+      { test: /\.png$/, loader: "url-loader?limit=100000" }
     ]
   },
   resolve: {

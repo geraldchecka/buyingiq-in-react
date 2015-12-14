@@ -29,7 +29,8 @@ var config = {
         loader: ExtractTextPlugin.extract("style-loader", "css-loader"),
         test: /\.css$/,
         exclude: /node_modules/
-      }
+      },
+      { test: /\.png$/, loader: "url-loader?limit=100000" }
     ]
   },
   resolve: {

@@ -2,7 +2,6 @@ import ActionContainer from './ActionContainer';
 import { AppDispatcher, StoreDispatcher } from '../dispatchers/Dispatcher';
 import _ from 'lodash';
 
-//TODO: Where WebAPI should sit will be decided later
 import WebAPI from '../utils/WebAPI';
 
 var actions = {
@@ -30,12 +29,12 @@ var actions = {
         break;
     }
   },
-/*  facetSelection: function(facet) {
+  facetSelection: function(input) {
     AppDispatcher.dispatch({
       actionType: ActionContainer.FACET_SELECTION,
-      facet: facet
+      facet: input.facet
     });
-  },*/
+  },
   getActionItems: function() {
     return this.actionData;
   },

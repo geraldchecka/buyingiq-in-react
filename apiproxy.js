@@ -12,14 +12,6 @@ var cors = require('cors');
 var app = express();
 var port = 5000;
 
-/*var allowCrossDomain = function(req, res, next) {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'OPTIONS,GET');
-  res.setHeader('Access-Control-Allow-Headers', 'Accept,X-Requested-With,Content-Type,access-control-allow-origin');
-  res.setHeader('Accept', "*\/*");
-  next();
-}*/
-
 app.set('port', port);
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -52,7 +44,6 @@ if (app.get('env') === 'development') {
     });
   });
 }
-
 
 function normalizePort(val) {
   var port = parseInt(val, 10);

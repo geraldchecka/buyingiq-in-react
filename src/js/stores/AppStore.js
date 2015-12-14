@@ -8,7 +8,6 @@ import ActionContainer from '../actions/ActionContainer';
 import DataOperations from '../utils/DataOperations';
 
 var CHANGE_EVENT = "change";
-var FACET_EVENT = "facetchange";
 
 var AppStore = assign({}, EventEmitter.prototype, {
   clonedCopy: {},
@@ -46,21 +45,10 @@ var AppStore = assign({}, EventEmitter.prototype, {
   removeChangeListener: function(callback) {
     this.removeListener(CHANGE_EVENT, callback);
   }
-  /*//FACET_EVENT
-  emitFacetChange: function() {
-    this.emit(FACET_EVENT);
-  },
-  addChangeListener: function(callback) {
-    this.on(FACET_EVENT, callback);
-  },
-  removeChangeListener: function(callback) {
-    this.removeListener(FACET_EVENT, callback);
-  }*/
 });
 
 //Dispatcher Handles
 AppStore.dispatchToken = AppDispatcher.register(function(payload) {
-  debugger;
   switch(payload.actionType) {
     case ActionContainer.INITIAL_LOAD_REQUEST:
       AppStore.init(payload.response.data);
@@ -76,9 +64,17 @@ AppStore.dispatchToken = AppDispatcher.register(function(payload) {
       }
       AppStore.emitChange();
       break;
-    /*case ActionContainer.FACET_SELECTION:
-      AppStore.emitFacetChange();
-      break;*/
+    case ActionContainer.FACET_SELECTION:
+      var facetPos = _.findIndex(AppStore.facetSection, function(facet) {
+        return facet.tag === payload.facet.tag;
+      });
+      if (facetPos > -1) {
+        AppStore.facetSection.splice(facetPos, 1);
+      } else {
+        AppStore.facetSection.push(payload.facet);
+      }
+      AppStore.emitChange();
+      break;
   }
 
   return true;

@@ -22,7 +22,7 @@ var ResultsSection = React.createClass({
       <div className="results-section">
         <div className="results-head">
           <SortSection />
-          <div className="meta">Total results {this.props.otherInfo.total}</div>
+          <div className="meta">Total results: {this.props.otherInfo.total}</div>
         </div>
         {this.props.mobiles.map(function(item, index) {
           return (

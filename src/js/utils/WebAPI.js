@@ -13,7 +13,6 @@ function getCall(payload, callback) {
     type: "GET",
     data: payload,
     success: function (response) {
-      console.log(response);
       //send it to storeDispatcher as success
       callback({
         status: "success",
@@ -21,7 +20,6 @@ function getCall(payload, callback) {
       });
     },
     error: function (response) {
-      console.log(res);
       //send it to storeDispatcher as an error
       callback({
         status: "error",

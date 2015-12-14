@@ -7,7 +7,7 @@ var ImageView = React.createClass({
     return (
      <div className="result-img">
         <a href={item.url}>
-          <img src={item.images[0]["180x181"]} alt={item.name} />
+          <img src={item.images[0]["180x180"]} alt={item.name} />
         </a>
       </div>
     );

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import AppStore from '../../stores/AppStore';
+import AppActions from '../../actions/AppActionCreators';
 
 function getFacetsFromStores() {
   return {
@@ -9,7 +10,7 @@ function getFacetsFromStores() {
 }
 
 const FacetSection = React.createClass({
-  /*getInitialState: function () {
+  getInitialState: function () {
     return getFacetsFromStores();
   },
   componentDidMount: function() {
@@ -20,12 +21,24 @@ const FacetSection = React.createClass({
   },
   _changeEvent: function() {
     this.setState(getFacetsFromStores());
-  },*/  
+  },
+  triggerClick: function(facet, event) {
+    AppActions.setActionItems({ type: "tag", value: facet.tag});
+    AppActions.filterRequest();
+    AppActions.facetSelection({facet: facet});
+  },
   render: function() {
-    //console.log(this.state.facets);
+    var facetsSel = this.state.facets,
+        self = this;
     return (
       <div className="facet-section">
-        Facet section goes here
+        {facetsSel.map(function(facet) {
+          return (
+            <div className="facet-item" key={facet.tag}>
+              {facet.label}
+            </div>
+          );
+        })}
       </div>
     )
   }
