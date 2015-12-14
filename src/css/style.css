@@ -65,5 +65,16 @@
   border-left: none;
   height: 455px;
   padding: 0 12px;
-  width: 25%;
+  width: 30.6%;
+}
+.results-section .next-page {
+  padding: 8px;
+  margin: 0 auto;
+  background: #EEE;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+  color: #666;
+  text-decoration: none;
+  width: 98%  ;
 }

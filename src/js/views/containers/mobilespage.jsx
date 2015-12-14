@@ -13,10 +13,8 @@ import AppStore from '../../stores/AppStore';
 function getStateFromStores() {
   return {
     mobiles: AppStore.getMobiles(),
-    folders: AppStore.getFolders()
-    //side sections data
-    //top sections data
-    //any other section data
+    folders: AppStore.getFolders(),
+    otherInfo: AppStore.getOtherInfo()
   }
 }
 
@@ -41,7 +39,7 @@ const MobilesPage = React.createClass({
           <div className="top-area">
             <FacetSection />
           </div>
-          <ResultsSection mobiles={this.state.mobiles} />
+          <ResultsSection otherInfo={this.state.otherInfo} mobiles={this.state.mobiles} />
         </div>
       </div>
     );

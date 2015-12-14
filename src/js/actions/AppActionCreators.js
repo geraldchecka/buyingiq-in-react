@@ -8,15 +8,10 @@ import WebAPI from '../utils/WebAPI';
 var actions = {
   actionData: {
     tags: ["mobiles"],
-    page: "1",
+    page: 1,
     facet: 1
   },
   setActionItems: function(input) {
-     /*
-      case "nextPage":
-        this.actionData.nextPage = input.value;
-        break;
-      */
     switch(input.type) {
       case "tag":
         if (_.indexOf(this.actionData.tags, input.value) > -1) {
@@ -27,12 +22,20 @@ var actions = {
         else {
           this.actionData.tags.push(input.value);
         }
+        //Reset page if changing main category
+        this.actionData.page = 1;
         break;
       case "page":
-        this.actionData.page = input.value;
+        this.actionData.page++;
         break;
     }
   },
+/*  facetSelection: function(facet) {
+    AppDispatcher.dispatch({
+      actionType: ActionContainer.FACET_SELECTION,
+      facet: facet
+    });
+  },*/
   getActionItems: function() {
     return this.actionData;
   },
@@ -54,6 +57,9 @@ var actions = {
         response: response
       })
     })
+  },
+  loadNextPage: function () {
+
   }
 };
 

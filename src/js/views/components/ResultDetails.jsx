@@ -36,7 +36,7 @@ var ResultDetails = React.createClass({
         </div>
         <div className="result-price-block">
           <div>
-            BEST PRICE <span className="result-price">{item.min_price_str}</span>
+            BEST PRICE <span className="result-price">Rs. {item.min_price_str}</span>
           </div>
           <div>{item.deal_count} DEALS</div>
         </div>
